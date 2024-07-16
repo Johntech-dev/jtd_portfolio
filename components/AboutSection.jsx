@@ -9,7 +9,7 @@ const AboutSection = () => {
           <img src='contactusbg.png' width={250} height={250} className='object-cover' alt='Contact Background' />
         </div>
         <div className='grid grid-cols-1 md:grid-cols-1 gap-4'>
-          <div className='flex items-center gap-4  bg-gradient-to-r from-[#A5D7E86B] from-42% '>
+          <div className='flex items-center gap-4  bg-gradient-to-r from-[#A5D7E86B] from-42% rounded-md '>
             <img src='cursor.png' className='h-10 w-10' alt='Cursor Icon' />
             <div>
               <h5 className='text-white text-lg font-semibold'>Frontend Developer</h5>

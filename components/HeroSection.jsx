@@ -5,7 +5,7 @@ import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 
 const HeroSection = () => {
   return (
-    <div className='pt-16 flex flex-col md:flex-row items-center gap-9 md:gap-[400px] relative'>
+    <div className='pt-16 mx-auto flex flex-col md:flex-row items-center gap-9 md:gap-[400px] relative'>
       <div className='z-10'>
         <h1 className='text-[24px] md:text-[30px] font-[Roboto] font-bold text-white text-center md:text-left'>
           Hello, I'm Akinmolayan John
