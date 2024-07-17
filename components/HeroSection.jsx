@@ -2,6 +2,7 @@
 import React from 'react'
 import { TypeAnimation } from 'react-type-animation'
 import { FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
 
 const HeroSection = () => {
   return (
@@ -31,8 +32,11 @@ const HeroSection = () => {
         />
         <div className='mt-10 gap-8 flex flex-row md:flex-row justify-center md:justify-start'>
           <button className='rounded-md text-white hover:text-[#576CBC] hover:bg-white bg-[#576CBC] p-2'>
+            <a href='mailto:johnayomide50@gmail.com'>
             Contact Me
+            </a>
           </button>
+
           <button className='rounded-md text-[#576CBC] hover:bg-[#576CBC] hover:text-white bg-[#fff] p-2'>
             Download Resume
           </button>
@@ -49,6 +53,9 @@ const HeroSection = () => {
           </a>
           <a href='https://www.instagram.com/johntechdev?igsh=MTE2djE0cWJ1YTBvOQ%3D%3D&utm_source=qr' target='_blank' rel='noopener noreferrer'>
             <FaInstagram className='text-white h-6 w-6' />
+          </a>
+          <a href='mailto:johnayomide50@gmail.com' target='_blank' rel='noopener noreferrer'>
+            <SiGmail className='text-white h-6 w-6' />
           </a>
         </div>
       </div>
