@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { useRef } from 'react';
-import { motion, inView, useInView, animate } from 'framer-motion';
+import { motion, inView, useInView, animate, easeIn } from 'framer-motion';
 
 const ProjectSection = () => {
 
@@ -13,7 +13,7 @@ const ProjectSection = () => {
     const cardVariant = {
         initial: {y:50, opacity:0},
         animate: {y:0, opacity:1},
-        transition: {ease: "linear"}
+        transition: {easeIn}
     }
   const ProjectData = [
     {

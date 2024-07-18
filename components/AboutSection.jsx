@@ -1,8 +1,34 @@
+'use client'
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AboutSection = () => {
+  const sliderVariants = {
+    initial: {
+      x: 0,
+    },
+    animate: {
+      x: "-260%",
+      opacity: 1,
+      transition: {
+        repeat: Infinity,
+        repeatType: "mirror",
+        duration: 20,
+      },
+    },
+  };
   return (
-    <div className='mt-32 px-8 py-8 bg-gradient-to-r from-[#0C0C0C99] to-transparent flex flex-col items-center'>
+    <motion.div
+    initial={{ x: -100, opacity: 0 }}
+    viewport={{ once: true }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{
+      delay: 0.8,
+      x: { type: "spring", stiffness: 200 },
+      opacity: { duration: 2 },
+      ease: "easeIn",
+      duration: 2,
+    }} className='mt-32 px-8 py-8 bg-gradient-to-r from-[#0C0C0C99] to-transparent flex flex-col items-center'>
       <h2 className='text-white text-3xl mb-8'>ABOUT</h2>
       <div className='flex flex-col md:flex-row gap-8 md:gap-44 items-center'>
         <div className='flex-shrink-0'>
@@ -38,7 +64,7 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

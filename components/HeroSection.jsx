@@ -10,9 +10,15 @@ const HeroSection = () => {
     <>
       <div className='pt-16 mx-auto flex flex-col md:flex-row items-center gap-9 md:gap-[400px] relative'>
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.1,
+          x: { type: "spring", stiffness: 50 },
+          opacity: { duration: 0.8 },
+          ease: "easeIn",
+          duration: 1,
+        }}
           className='z-10'
         >
           <h1 className='text-[24px] md:text-[30px] font-[Roboto] font-bold text-white text-center md:text-left'>
@@ -66,10 +72,16 @@ const HeroSection = () => {
             </a>
           </div>
         </motion.div>
-        <motion.div 
-           initial={{ opacity: 0, scale: 0.5 }}
-           animate={{ opacity: 1, scale: 1 }}
-           transition={{ duration: 0.5 }}
+        <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{
+          delay: 0.1,
+          x: { type: "spring", stiffness: 200 },
+          opacity: { duration: 0.8 },
+          ease: "easeIn",
+          duration: 1,
+        }}
         className='z-10'>
           <img src='john.jpg' alt="John's portrait" className='w-48 h-48 md:w-64 md:h-64 rounded-full border border-white object-cover' />
         </motion.div>
