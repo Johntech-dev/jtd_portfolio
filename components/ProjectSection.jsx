@@ -1,8 +1,20 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { useRef } from 'react';
+import { motion, inView, useInView, animate } from 'framer-motion';
 
 const ProjectSection = () => {
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { once:true});
+
+    const cardVariant = {
+        initial: {y:50, opacity:0},
+        animate: {y:0, opacity:1},
+        transition: {ease: "linear"}
+    }
   const ProjectData = [
     {
       id: 1,
@@ -52,14 +64,14 @@ const ProjectSection = () => {
   ]
 
   return (
-    <div className='mt-10 mb-10'>
+    <div ref={ref} className='mt-10 mb-10'>
       <div className='mt-9 mb-9'>
         <h2 className='text-[30px] text-white'>Project Section</h2>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
         {
           ProjectData.map(project => (
-            <div key={project.id} className='flex flex-col bg-[#0C0C0C99] border border-blue-900 p-6 rounded-lg'>
+            <motion.div variants={cardVariant} initial="initial" animate={isInView ? "animate" : "initial"} key={project.id} className='flex flex-col bg-[#0C0C0C99] border border-blue-900 p-6 rounded-lg'>
               <img src={project.image} alt={project.title} width={300} height={200} className='rounded-md' />
               <h3 className='text-xl font-bold text-white mt-4'>{project.title}</h3>
               <p className='text-sm text-white mt-2'>{project.description}</p>
@@ -71,7 +83,7 @@ const ProjectSection = () => {
               <FaGithub />
               </a>
               </div>
-            </div>
+            </motion.div>
           ))
         }
       </div>
