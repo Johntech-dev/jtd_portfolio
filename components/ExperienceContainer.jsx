@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { motion } from 'framer-motion';
 
 // import './styles.css';
 
@@ -11,8 +12,32 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 
 const ExperienceContainer = () => {
+  const sliderVariants = {
+    initial: {
+      x: 0,
+    },
+    animate: {
+      x: "-260%",
+      opacity: 1,
+      transition: {
+        repeat: Infinity,
+        repeatType: "mirror",
+        duration: 20,
+      },
+    },
+  };
   return (
-   <>
+   <motion.div
+   initial={{ x: -100, opacity: 0 }}
+   viewport={{ once: true }}
+   whileInView={{ x: 0, opacity: 1 }}
+   transition={{
+     delay: 0.8,
+     x: { type: "spring", stiffness: 200 },
+     opacity: { duration: 2 },
+     ease: "easeIn",
+     duration: 2,
+   }}>
    <div className='py-8'>
     <h2 className='text-[25px] text-white'>Work Experience</h2>
    </div>
@@ -85,7 +110,7 @@ const ExperienceContainer = () => {
             </div>
         </SwiperSlide>
       </Swiper>
-   </>
+   </motion.div>
   )
 }
 
